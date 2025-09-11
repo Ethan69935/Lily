@@ -1,0 +1,221 @@
+<html><head>
+    <meta charset="UTF-8">
+    <title>我的第一个网站</title>
+    <style>
+        /* 页面整体设置 */
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        /* 主标题样式 - 天蓝色 */
+        .main-title {
+            color: #87CEEB; /* 天蓝色 */
+            font-family: 宋体, SimSun; /* 宋体 */
+            text-align: center;
+            font-size: 32px;
+            margin: 20px 0 10px 0;
+        }
+        
+        /* 标题下方小字 */
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin: 5px 0;
+            font-family: 黑体, SimHei; /* 黑体 */
+            font-size: 18px; /* 增大字号 */
+        }
+        
+        /* 分隔线 */
+        .divider {
+            border: none;
+            border-top: 2px solid #ddd;
+            margin: 20px 0;
+        }
+        
+        /* 小标题样式 */
+        .section-title {
+            color: #333;
+            border-bottom: 2px solid #4a7abc;
+            padding-bottom: 8px;
+            margin: 30px 0 15px 0;
+        }
+        
+        /* 内容卡片 */
+        .content-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        /* 圆形图片样式 */
+        .round-img {
+            display: block;
+            margin: 0 auto 20px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%; /* 圆形图片 */
+            object-fit: cover;
+            border: 3px solid #eee;
+        }
+        
+        /* 爱好图片 */
+        .hobby-img {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 10px auto; /* 图片居中 */
+            display: block;
+        }
+        
+        /* 按钮样式 */
+        .btn {
+            background-color: #4a7abc;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        
+        /* 隐藏的爱好内容 */
+        #more-hobbies {
+            margin-top: 15px;
+            display: none; /* 初始隐藏 */
+        }
+        
+        /* 点赞区域 - 居中显示 */
+        .like-section {
+            text-align: center; /* 整个区域内容居中 */
+            padding: 10px 0;
+        }
+        
+        /* 点赞按钮 */
+        .like-btn {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%; /* 圆形按钮 */
+            font-size: 24px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: transform 0.2s;
+        }
+        
+        .like-btn:active {
+            transform: scale(0.9); /* 点击效果 */
+        }
+        
+        /* 计数器样式 */
+        #like-count {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 主标题 -->
+    <h1 class="main-title">我的第一个网站</h1>
+    
+    <!-- 标题下方小字 -->
+    <p class="subtitle">这是我做的第一个网站</p>
+    <p class="subtitle">欢迎光临</p>
+    
+    <hr class="divider">
+    
+    <!-- 作者介绍部分 -->
+    <h2 class="section-title">作者介绍</h2>
+    <div class="content-card">
+        <!-- 圆形照片（本地图片） -->
+        <img src="profile photo.png" alt="李理的照片" class="round-img">
+        
+        <!-- 作者介绍内容 -->
+        <p>我是李理，一名大三学生，目前就读于南华大学，我的学号是20234080119</p>
+        <p>这是我在Web开发课程中制作的第一个网站，虽然简单但我非常用心地完成了它。</p>
+    </div>
+    
+    <!-- 我的爱好部分 -->
+    <h2 class="section-title">我的爱好</h2>
+    <div class="content-card">
+        <p>我的爱好很广泛，具体有：</p>
+        
+        <h3>阅读</h3>
+        <p>我喜欢阅读各类书籍，尤其是科幻小说和历史类书籍。</p>
+        <img src="Reading.png" alt="阅读相关图片" class="hobby-img">
+        
+        <h3>音乐</h3>
+        <p>我喜欢听各种类型的音乐，例如纯音乐、R&B</p>
+        <img src="Listening.png" alt="音乐相关图片" class="hobby-img">
+        
+        <!-- 了解更多按钮 -->
+        <button class="btn" onclick="showMoreHobbies()">了解更多</button>
+        
+        <!-- 隐藏的爱好内容 -->
+        <div id="more-hobbies">
+            <h3>旅游</h3>
+            <p>我喜欢去不同的地方旅行，体验各地的风土人情。</p>
+            <img src="Traveling.png" alt="旅游相关图片" class="hobby-img">
+            
+            <h3>摄影</h3>
+            <p>旅行的时候我喜欢用相机记录下美丽的瞬间。</p>
+            <img src="Photography.png" alt="摄影相关图片" class="hobby-img">
+        </div>
+    </div>
+    
+    <!-- 创作动机 -->
+    <h2 class="section-title">创作动机</h2>
+    <div class="content-card">
+        <p>这是一个作业！</p>
+        <p>通过制作这个网站，我学习到了HTML、CSS和JavaScript的基础知识，虽然简单但收获很大。</p>
+    </div>
+    
+    <!-- 点赞功能（居中） -->
+    <div class="content-card">
+        <div class="like-section">
+            <p>如果你觉得做的还行，可以给我点赞：</p>
+            <button class="like-btn" onclick="increaseLike()">👍</button>
+            <span id="like-count">0</span>
+            <p>感谢您的支持！</p>
+        </div>
+    </div>
+    
+    <!-- 联系我 -->
+    <h2 class="section-title">联系我</h2>
+    <div class="content-card">
+        <p>如果有想法，可以联系我：</p>
+        <p>邮箱：605773315@qq.com</p>
+        <p>QQ：可以点这里加我 → 
+            <a href="https://qm.qq.com/xxx" target="_blank">我的QQ链接</a>
+        </p>
+           </div>
+    
+    <script>
+        // 显示更多爱好
+        function showMoreHobbies() {
+            var more = document.getElementById("more-hobbies");
+            if (more.style.display === "none" || more.style.display === "") {
+                more.style.display = "block";
+            } else {
+                more.style.display = "none";
+            }
+        }
+        
+        // 点赞计数器
+        let likeCount = 0;
+        function increaseLike() {
+            likeCount++;
+            document.getElementById("like-count").textContent = likeCount;
+        }
+    </script>
+    </body></html>
