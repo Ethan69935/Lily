@@ -1,8 +1,9 @@
-<html><head>
+<html>
+<head>
     <meta charset="UTF-8">
-    <title>我的第一个网站</title>
+    <title>李理的小站</title>
     <style>
-        /* 页面整体设置 */
+        /* 页面整体设置（让内容居中，背景色浅灰看着舒服） */
         body {
             max-width: 800px;
             margin: 0 auto;
@@ -10,101 +11,101 @@
             background-color: #f5f5f5;
         }
         
-        /* 主标题样式 - 天蓝色 */
+        /* 大标题样式 - 天蓝色（我觉得这个颜色挺清新的） */
         .main-title {
-            color: #87CEEB; /* 天蓝色 */
-            font-family: 宋体, SimSun; /* 宋体 */
+            font-family: 宋体; /* 用宋体显得正式一点 */
             text-align: center;
-            font-size: 32px;
+            font-size: 32px; /* 字号调大了，看着醒目 */
             margin: 20px 0 10px 0;
+            color: #87CEEB; 
         }
         
         /* 标题下方小字 */
         .subtitle {
             text-align: center;
-            color: #666;
             margin: 5px 0;
-            font-family: 黑体, SimHei; /* 黑体 */
-            font-size: 18px; /* 增大字号 */
+            font-family: 黑体;
+            font-size: 18px;
+            color: #666; /* 灰色不刺眼 */
         }
         
-        /* 分隔线 */
+        /* 分隔线（用浅灰色，别太明显） */
         .divider {
             border: none;
             border-top: 2px solid #ddd;
             margin: 20px 0;
         }
         
-        /* 小标题样式 */
+        /* 小标题样式（下面加个蓝色横线，好看） */
         .section-title {
             color: #333;
-            border-bottom: 2px solid #4a7abc;
             padding-bottom: 8px;
             margin: 30px 0 15px 0;
+            border-bottom: 2px solid #4a7abc;
         }
         
-        /* 内容卡片 */
+        /* 内容卡片（白色背景带点阴影，像卡片一样） */
         .content-card {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* 卡片之间留点距离 */
         }
         
-        /* 圆形图片样式 */
+        /* 圆形图片样式（头像用圆形好看） */
         .round-img {
             display: block;
-            margin: 0 auto 20px;
+            margin: 0 auto 20px; /* 图片居中 */
             width: 200px;
             height: 200px;
-            border-radius: 50%; /* 圆形图片 */
+            border-radius: 50%; /* 圆形的关键 */
             object-fit: cover;
             border: 3px solid #eee;
         }
         
-        /* 爱好图片 */
+        /* 爱好图片（固定高度，避免变形） */
         .hobby-img {
             width: 100%;
             max-width: 300px;
             height: 200px;
             object-fit: cover;
             border-radius: 5px;
-            margin: 10px auto; /* 图片居中 */
-            display: block;
+            margin: 10px auto;
+            display: block; /* 让margin生效 */
         }
         
-        /* 按钮样式 */
+        /* 按钮样式（蓝色按钮，白色文字） */
         .btn {
             background-color: #4a7abc;
             color: white;
             border: none;
             padding: 8px 15px;
             border-radius: 5px;
-            cursor: pointer;
+            cursor: pointer; /* 鼠标放上去变手型 */
             margin: 10px 0;
         }
         
-        /* 隐藏的爱好内容 */
+        /* 隐藏的爱好内容（一开始不显示） */
         #more-hobbies {
             margin-top: 15px;
-            display: none; /* 初始隐藏 */
+            display: none;
         }
         
         /* 点赞区域 - 居中显示 */
         .like-section {
-            text-align: center; /* 整个区域内容居中 */
+            text-align: center;
             padding: 10px 0;
         }
         
-        /* 点赞按钮 */
+        /* 点赞按钮（红色圆形按钮） */
         .like-btn {
             background-color: #ff6b6b;
             color: white;
             border: none;
             width: 60px;
             height: 60px;
-            border-radius: 50%; /* 圆形按钮 */
+            border-radius: 50%;
             font-size: 24px;
             cursor: pointer;
             margin: 10px 0;
@@ -112,25 +113,25 @@
         }
         
         .like-btn:active {
-            transform: scale(0.9); /* 点击效果 */
+            transform: scale(0.9); /* 点击时缩小一点，有反馈 */
         }
         
-        /* 计数器样式 */
+        /* 计数器样式（红色数字，醒目） */
         #like-count {
             font-size: 20px;
             font-weight: bold;
-            color: #ff6b6b;
             margin-left: 10px;
+            color: #ff6b6b;
         }
     </style>
 </head>
 <body>
     <!-- 主标题 -->
-    <h1 class="main-title">我的第一个网站</h1>
+    <h1 class="main-title">李理的小站</h1>
     
     <!-- 标题下方小字 -->
     <p class="subtitle">这是我做的第一个网站</p>
-    <p class="subtitle">欢迎光临</p>
+    <p class="subtitle">欢迎光临呀～</p>
     
     <hr class="divider">
     
@@ -159,7 +160,7 @@
         <img src="Listening.png" alt="音乐相关图片" class="hobby-img">
         
         <!-- 了解更多按钮 -->
-        <button class="btn" onclick="showMoreHobbies()">了解更多</button>
+        <button class="btn" onclick="showHobbyMore()">了解更多</button>
         
         <!-- 隐藏的爱好内容 -->
         <div id="more-hobbies">
@@ -186,7 +187,7 @@
             <p>如果你觉得做的还行，可以给我点赞：</p>
             <button class="like-btn" onclick="increaseLike()">👍</button>
             <span id="like-count">0</span>
-            <p>感谢您的支持！</p>
+            <p>感谢您的支持！如果你 有其他建议也可以告诉我～</p>
         </div>
     </div>
     
@@ -195,15 +196,16 @@
     <div class="content-card">
         <p>如果有想法，可以联系我：</p>
         <p>邮箱：605773315@qq.com</p>
-        <p>QQ：可以点这里加我 → 
-            <a href="https://qm.qq.com/xxx" target="_blank">我的QQ链接</a>
+        <p>QQ：可以先登录QQ再联系我 → 
+            <a href="https://im.qq.com/" target="_blank">登录QQ</a>
         </p>
-           </div>
+    </div>
     
     <script>
-        // 显示更多爱好
-        function showMoreHobbies() {
+        // 显示更多爱好（之前函数名太长了，改短点）
+        function showHobbyMore() {
             var more = document.getElementById("more-hobbies");
+            // 检查当前状态，显示或隐藏
             if (more.style.display === "none" || more.style.display === "") {
                 more.style.display = "block";
             } else {
@@ -211,12 +213,12 @@
             }
         }
         
-        // 点赞计数器
+        // 点赞计数器（从0开始算）
         let likeCount = 0;
         function increaseLike() {
-            likeCount++;
+            likeCount++; // 每次点击加1
             document.getElementById("like-count").textContent = likeCount;
         }
     </script>
-
-    </body></html> 
+</body>
+</html>
